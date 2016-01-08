@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Frogger</title>
+  </head>
+
+  <body>
+    <h1 class="title"> Frogger</h1>
+    <div id="win">You win!!</div>
+    <canvas style="background: url('./img/background3.png')"></canvas>
+    <div id="directions" class="directions">Use arrow keys to move. Don't get run over!</div>
+    <button id="start" type="button" onclick="start()">START</button>
+
+    <script type="application/javascript" src="vendor/keymaster.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+    <script type="application/javascript" src="lib/util.js"></script>
+    <script type="application/javascript" src="lib/movingObject.js"></script>
+    <script type="application/javascript" src="lib/car.js"></script>
+    <script type="application/javascript" src="lib/frog.js"></script>
+    <script type="application/javascript" src="lib/game.js"></script>
+    <script type="application/javascript" src="lib/gameView.js"></script>
+
+
+    <script type="application/javascript">
+
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      (function () {
+        canvasEl.width = Frogger.Game.DIM_X;
+        canvasEl.height = Frogger.Game.DIM_Y;
+      })();
+
+      var start = function() {
+        var canvasEl = document.getElementsByTagName("canvas")[0];
+        (function () {
+          canvasEl.width = Frogger.Game.DIM_X;
+          canvasEl.height = Frogger.Game.DIM_Y;
+        })();
+
+        document.getElementById("start").style.animation = "none";
+        var ctx = canvasEl.getContext("2d");
+        var game = new Frogger.Game();
+        new Frogger.GameView(game, ctx).start();
+      }
+    </script>
+  </body>
+</html>
