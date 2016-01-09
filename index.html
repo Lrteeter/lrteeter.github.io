@@ -5,7 +5,7 @@
 
   <body>
     <h1 class="title"> Frogger</h1>
-    <div id="win">You win!!</div>
+    <div type="hidden" id="win">You win!!</div>
     <canvas style="background: url('./img/background3_edit.png')"></canvas>
     <div id="directions" class="directions">Use arrow keys to move. Don't get run over!</div>
     <button id="start" type="button" onclick="start()">START</button>
@@ -22,13 +22,13 @@
 
     <script type="application/javascript">
 
-      var canvasEl = document.getElementsByTagName("canvas")[0];
-      (function () {
-        canvasEl.width = Frogger.Game.DIM_X;
-        canvasEl.height = Frogger.Game.DIM_Y;
-      })();
+      // var canvasEl = document.getElementsByTagName("canvas")[0];
+      // (function () {
+      //   canvasEl.width = Frogger.Game.DIM_X;
+      //   canvasEl.height = Frogger.Game.DIM_Y;
+      // })();
 
-      var start = function() {
+      // var start = function() {
         var canvasEl = document.getElementsByTagName("canvas")[0];
         (function () {
           canvasEl.width = Frogger.Game.DIM_X;
@@ -39,7 +39,7 @@
         var ctx = canvasEl.getContext("2d");
         var game = new Frogger.Game();
         new Frogger.GameView(game, ctx).start();
-      }
+      // }
     </script>
   </body>
 </html>
