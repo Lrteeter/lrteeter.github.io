@@ -1,14 +1,19 @@
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
     <title>Frogger</title>
   </head>
 
   <body>
-    <h1 class="title"> Frogger</h1>
-    <div type="hidden" id="win">You win!!</div>
+    <div class="logo" id="logo">
+      <h1 id="title" class="title">Frogger</h1>
+      <img src="img/Frogger_hyperarcade_art.png"/>
+      <div class="bubble me">I'm too young to die</div>
+    </div>
     <canvas style="background: url('./img/background3_edit.png')"></canvas>
-    <div id="directions" class="directions">Use arrow keys to move. Don't get run over!</div>
-    <button id="start" type="button" onclick="start()">START</button>
+    <div class="bottom">
+      <div id="directions" class="directions">Use arrow keys to move. Don't get run over!</div>
+    </div>
 
     <script type="application/javascript" src="vendor/keymaster.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
@@ -22,24 +27,16 @@
 
     <script type="application/javascript">
 
-      // var canvasEl = document.getElementsByTagName("canvas")[0];
-      // (function () {
-      //   canvasEl.width = Frogger.Game.DIM_X;
-      //   canvasEl.height = Frogger.Game.DIM_Y;
-      // })();
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      (function () {
+        canvasEl.width = Frogger.Game.DIM_X;
+        canvasEl.height = Frogger.Game.DIM_Y;
+      })();
 
-      // var start = function() {
-        var canvasEl = document.getElementsByTagName("canvas")[0];
-        (function () {
-          canvasEl.width = Frogger.Game.DIM_X;
-          canvasEl.height = Frogger.Game.DIM_Y;
-        })();
+      var ctx = canvasEl.getContext("2d");
+      var Game = new Frogger.Game();
+      new Frogger.GameView(Game, ctx).start();
 
-        document.getElementById("start").style.animation = "none";
-        var ctx = canvasEl.getContext("2d");
-        var game = new Frogger.Game();
-        new Frogger.GameView(game, ctx).start();
-      // }
     </script>
   </body>
 </html>
