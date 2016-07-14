@@ -1,4 +1,2 @@
 # lrteeter.github.io
-Simple little JavaScript browser game mimicking the classic Frogger arcade game.
-
-### [Live](https://lrteeter.github.io)
+Deprecated frogger repo. Links no longer work due to username change.
